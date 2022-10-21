@@ -12,16 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function validar(e) {
     if (e.target.value.trim() === "") {
-      mostrarAlerta();
+      mostrarAlerta(`El campo ${e.target.id} es obligatorio`);
     } else {
       console.log("Hay algo");
     }
   }
 
-  function mostrarAlerta() {
+  function mostrarAlerta(mensaje) {
     // Generar alerta en HTML
     const error = document.createElement("P");
-    error.textContent = "Ocurrió un error";
+    error.textContent = mensaje;
     error.classList.add("bg-red-600", "text-white", "p-2", "text-center");
 
     // Inyectar el error al formulario
